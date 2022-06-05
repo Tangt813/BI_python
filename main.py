@@ -1,8 +1,10 @@
 import py2neo.data
 from flask import Flask, request
 from py2neo import Graph
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 graph = Graph("neo4j://150.158.47.16:7687", auth=("neo4j", "123456"))
 
 
